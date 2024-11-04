@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transition: transform 0.3s ease;
+  transform: translateX(-70%);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.toggle-button {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-list.open {
+  opacity: 1;
+}
+
+li {
+  margin: 10px 0;
+}
+.menu-list li {
+  margin: 10px 0; 
+}
+
+.menu-list li a {
+  color: white; 
+  text-decoration: none; 
+  padding: 10px; 
+  border: 1px solid transparent; 
+  border-radius: 5px; 
+  transition: background 0.3s ease;
+}
+
+.menu-list li a:hover {
+  background: rgba(255, 255, 255, 0.2); 
+}
+.content {
+  margin-left: 80px; 
+  transition: margin-left 0.3s ease;
+  padding: 20px; 
+}
+
+.item-detail {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.item-detail h1 {
+  margin-bottom: 20px;
+}
+
+.item-detail p {
+  font-size: 18px;
+  color: #555;
+}
+
+.item-list {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.item-list h1 {
+  margin-bottom: 20px;
+}
+
+.item-list p {
+  font-size: 18px;
+  color: #555;
+}
