@@ -4,6 +4,11 @@ import './App.css';
 import menuIcon from './menu-icon.png';
 import ItemDetalhe from './pages/ItemDetalhe';
 import ListaItens from './pages/ListaItens';
+import Usuario from './pages/Usuario';
+import ListaCompras from './pages/ListaCompras';
+import Carrinho from './pages/Carrinho';
+import CadastroUsuario from './pages/CadastroUsuario';
+import CadastroProduto from './pages/CadastroProduto';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +35,22 @@ function App() {
             <Link to="/" onClick={handleLinkClick}>Inicio</Link>
           </li>
           <li>
+            <Link to="/usuario" onClick={handleLinkClick}>Usuário</Link>
+          </li>
+          <li>
+            <Link to="/cadastro-usuario" onClick={handleLinkClick}>Cadastro de Usuário</Link>
+          </li>
+          <li>
+            <Link to="/cadastro-produto" onClick={handleLinkClick}>Cadastro de Produtos</Link>
+          </li>
+          <li>
             <Link to="/lista-itens" onClick={handleLinkClick}>Lista de Itens</Link>
+          </li>
+          <li>
+            <Link to="/lista-compras" onClick={handleLinkClick}>Lista de Compras</Link>
+          </li>
+          <li>
+            <Link to="/carrinho" onClick={handleLinkClick}>Carrinho</Link>
           </li>
         </ul>
         
@@ -38,6 +58,11 @@ function App() {
 
       <div className="content">
         <Routes>
+          <Route path="/usuario" element={<Usuario />} />
+          <Route path="/lista-compras" element={<ListaCompras />} />
+          <Route path="/carrinho" element={<Carrinho />} />
+          <Route path="/cadastro-usuario" element={<CadastroUsuario />} />
+          <Route path="/cadastro-produto" element={<CadastroProduto />} />
           <Route path="/lista-itens" element={<ListaItens />} />
           <Route path="/item/:id" element={<ItemDetalhe />} />
           <Route path="/" element={<h1>Página Inicial</h1>} /> {/* Página Inicial */}
