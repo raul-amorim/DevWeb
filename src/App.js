@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import menuIcon from './menu-icon.png';
+
 import ItemDetalhe from './pages/ItemDetalhe';
 import ListaItens from './pages/ListaItens';
 import Usuario from './pages/Usuario';
@@ -9,6 +10,10 @@ import ListaCompras from './pages/ListaCompras';
 import Carrinho from './pages/Carrinho';
 import CadastroUsuario from './pages/CadastroUsuario';
 import CadastroProduto from './pages/CadastroProduto';
+
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:5000/api'; 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +29,7 @@ function App() {
   return (
     <Router>
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-      <img
+        <img
           src={menuIcon}
           alt="Menu"
           className="toggle-button"
@@ -53,7 +58,6 @@ function App() {
             <Link to="/carrinho" onClick={handleLinkClick}>Carrinho</Link>
           </li>
         </ul>
-        
       </div>
 
       <div className="content">
