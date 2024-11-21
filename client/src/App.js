@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import menuIcon from './menu-icon.png';
 
+import Usuario from './pages/Login';
 import ItemDetalhe from './pages/ItemDetalhe';
 import ListaItens from './pages/ListaItens';
 import Usuario from './pages/Usuario';
@@ -40,6 +41,9 @@ function App() {
             <Link to="/" onClick={handleLinkClick}>Inicio</Link>
           </li>
           <li>
+            <Link to="/login" onClick={handleLinkClick}>Login</Link>
+          </li>
+          <li>
             <Link to="/usuario" onClick={handleLinkClick}>Usuário</Link>
           </li>
           <li>
@@ -62,6 +66,7 @@ function App() {
 
       <div className="content">
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/usuario" element={<Usuario />} />
           <Route path="/lista-compras" element={<ListaCompras />} />
           <Route path="/carrinho" element={<Carrinho />} />
